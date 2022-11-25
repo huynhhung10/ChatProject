@@ -30,26 +30,26 @@
         {
             this.lblProfileName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.Chatss = new System.Windows.Forms.TabPage();
-            this.NewChats = new System.Windows.Forms.TabPage();
-            this.txtSearchChat = new System.Windows.Forms.TextBox();
-            this.flpChats = new System.Windows.Forms.FlowLayoutPanel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnMyProfile = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.Chatss = new System.Windows.Forms.TabPage();
+            this.flpChats = new System.Windows.Forms.FlowLayoutPanel();
+            this.txtSearchChat = new System.Windows.Forms.TextBox();
+            this.NewChats = new System.Windows.Forms.TabPage();
+            this.btnCreateChat = new System.Windows.Forms.Button();
+            this.flbAddChatMembers = new System.Windows.Forms.FlowLayoutPanel();
+            this.txtChatName = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabFriends = new System.Windows.Forms.TabControl();
             this.Friends = new System.Windows.Forms.TabPage();
-            this.Others = new System.Windows.Forms.TabPage();
-            this.txtSearchFriends = new System.Windows.Forms.TextBox();
             this.flbFriends = new System.Windows.Forms.FlowLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtChatName = new System.Windows.Forms.TextBox();
-            this.flbAddChatMembers = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnCreateChat = new System.Windows.Forms.Button();
-            this.FriendRequest = new System.Windows.Forms.TabPage();
-            this.txtSearchClients = new System.Windows.Forms.TextBox();
+            this.txtSearchFriends = new System.Windows.Forms.TextBox();
+            this.Others = new System.Windows.Forms.TabPage();
             this.flbClients = new System.Windows.Forms.FlowLayoutPanel();
+            this.txtSearchClients = new System.Windows.Forms.TextBox();
+            this.FriendRequest = new System.Windows.Forms.TabPage();
             this.flbRequests = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -83,6 +83,24 @@
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(11, 13);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(64, 29);
+            this.btnLogout.TabIndex = 2;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            // 
+            // btnMyProfile
+            // 
+            this.btnMyProfile.Location = new System.Drawing.Point(85, 13);
+            this.btnMyProfile.Name = "btnMyProfile";
+            this.btnMyProfile.Size = new System.Drawing.Size(55, 29);
+            this.btnMyProfile.TabIndex = 3;
+            this.btnMyProfile.Text = "button2";
+            this.btnMyProfile.UseVisualStyleBackColor = true;
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.Chatss);
@@ -105,6 +123,20 @@
             this.Chatss.Text = "chats";
             this.Chatss.UseVisualStyleBackColor = true;
             // 
+            // flpChats
+            // 
+            this.flpChats.Location = new System.Drawing.Point(4, 39);
+            this.flpChats.Name = "flpChats";
+            this.flpChats.Size = new System.Drawing.Size(234, 488);
+            this.flpChats.TabIndex = 1;
+            // 
+            // txtSearchChat
+            // 
+            this.txtSearchChat.Location = new System.Drawing.Point(4, 6);
+            this.txtSearchChat.Name = "txtSearchChat";
+            this.txtSearchChat.Size = new System.Drawing.Size(234, 27);
+            this.txtSearchChat.TabIndex = 0;
+            // 
             // NewChats
             // 
             this.NewChats.Controls.Add(this.btnCreateChat);
@@ -119,37 +151,38 @@
             this.NewChats.Text = "New Chat";
             this.NewChats.UseVisualStyleBackColor = true;
             // 
-            // txtSearchChat
+            // btnCreateChat
             // 
-            this.txtSearchChat.Location = new System.Drawing.Point(4, 6);
-            this.txtSearchChat.Name = "txtSearchChat";
-            this.txtSearchChat.Size = new System.Drawing.Size(234, 27);
-            this.txtSearchChat.TabIndex = 0;
+            this.btnCreateChat.Location = new System.Drawing.Point(69, 479);
+            this.btnCreateChat.Name = "btnCreateChat";
+            this.btnCreateChat.Size = new System.Drawing.Size(94, 42);
+            this.btnCreateChat.TabIndex = 0;
+            this.btnCreateChat.Text = "Create Chat";
+            this.btnCreateChat.UseVisualStyleBackColor = true;
+            this.btnCreateChat.Click += new System.EventHandler(this.button1_Click);
             // 
-            // flpChats
+            // flbAddChatMembers
             // 
-            this.flpChats.Location = new System.Drawing.Point(6, 36);
-            this.flpChats.Name = "flpChats";
-            this.flpChats.Size = new System.Drawing.Size(232, 491);
-            this.flpChats.TabIndex = 1;
+            this.flbAddChatMembers.Location = new System.Drawing.Point(6, 46);
+            this.flbAddChatMembers.Name = "flbAddChatMembers";
+            this.flbAddChatMembers.Size = new System.Drawing.Size(232, 427);
+            this.flbAddChatMembers.TabIndex = 0;
             // 
-            // btnLogout
+            // txtChatName
             // 
-            this.btnLogout.Location = new System.Drawing.Point(11, 13);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(64, 29);
-            this.btnLogout.TabIndex = 2;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = true;
+            this.txtChatName.Location = new System.Drawing.Point(83, 13);
+            this.txtChatName.Name = "txtChatName";
+            this.txtChatName.Size = new System.Drawing.Size(155, 27);
+            this.txtChatName.TabIndex = 1;
             // 
-            // btnMyProfile
+            // label6
             // 
-            this.btnMyProfile.Location = new System.Drawing.Point(85, 13);
-            this.btnMyProfile.Name = "btnMyProfile";
-            this.btnMyProfile.Size = new System.Drawing.Size(55, 29);
-            this.btnMyProfile.TabIndex = 3;
-            this.btnMyProfile.Text = "button2";
-            this.btnMyProfile.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(80, 20);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Chat name";
             // 
             // panel2
             // 
@@ -181,6 +214,20 @@
             this.Friends.Text = "Friends";
             this.Friends.UseVisualStyleBackColor = true;
             // 
+            // flbFriends
+            // 
+            this.flbFriends.Location = new System.Drawing.Point(6, 37);
+            this.flbFriends.Name = "flbFriends";
+            this.flbFriends.Size = new System.Drawing.Size(243, 556);
+            this.flbFriends.TabIndex = 1;
+            // 
+            // txtSearchFriends
+            // 
+            this.txtSearchFriends.Location = new System.Drawing.Point(6, 6);
+            this.txtSearchFriends.Name = "txtSearchFriends";
+            this.txtSearchFriends.Size = new System.Drawing.Size(244, 27);
+            this.txtSearchFriends.TabIndex = 0;
+            // 
             // Others
             // 
             this.Others.Controls.Add(this.flbClients);
@@ -193,52 +240,19 @@
             this.Others.Text = "Others";
             this.Others.UseVisualStyleBackColor = true;
             // 
-            // txtSearchFriends
+            // flbClients
             // 
-            this.txtSearchFriends.Location = new System.Drawing.Point(6, 6);
-            this.txtSearchFriends.Name = "txtSearchFriends";
-            this.txtSearchFriends.Size = new System.Drawing.Size(244, 27);
-            this.txtSearchFriends.TabIndex = 0;
+            this.flbClients.Location = new System.Drawing.Point(8, 39);
+            this.flbClients.Name = "flbClients";
+            this.flbClients.Size = new System.Drawing.Size(241, 551);
+            this.flbClients.TabIndex = 1;
             // 
-            // flbFriends
+            // txtSearchClients
             // 
-            this.flbFriends.Location = new System.Drawing.Point(6, 37);
-            this.flbFriends.Name = "flbFriends";
-            this.flbFriends.Size = new System.Drawing.Size(243, 556);
-            this.flbFriends.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 16);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 20);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Chat name";
-            // 
-            // txtChatName
-            // 
-            this.txtChatName.Location = new System.Drawing.Point(83, 13);
-            this.txtChatName.Name = "txtChatName";
-            this.txtChatName.Size = new System.Drawing.Size(155, 27);
-            this.txtChatName.TabIndex = 1;
-            // 
-            // flbAddChatMembers
-            // 
-            this.flbAddChatMembers.Location = new System.Drawing.Point(6, 46);
-            this.flbAddChatMembers.Name = "flbAddChatMembers";
-            this.flbAddChatMembers.Size = new System.Drawing.Size(232, 427);
-            this.flbAddChatMembers.TabIndex = 0;
-            // 
-            // btnCreateChat
-            // 
-            this.btnCreateChat.Location = new System.Drawing.Point(69, 479);
-            this.btnCreateChat.Name = "btnCreateChat";
-            this.btnCreateChat.Size = new System.Drawing.Size(94, 42);
-            this.btnCreateChat.TabIndex = 0;
-            this.btnCreateChat.Text = "Create Chat";
-            this.btnCreateChat.UseVisualStyleBackColor = true;
-            this.btnCreateChat.Click += new System.EventHandler(this.button1_Click);
+            this.txtSearchClients.Location = new System.Drawing.Point(6, 6);
+            this.txtSearchClients.Name = "txtSearchClients";
+            this.txtSearchClients.Size = new System.Drawing.Size(243, 27);
+            this.txtSearchClients.TabIndex = 0;
             // 
             // FriendRequest
             // 
@@ -249,20 +263,6 @@
             this.FriendRequest.TabIndex = 2;
             this.FriendRequest.Text = "Friend Request";
             this.FriendRequest.UseVisualStyleBackColor = true;
-            // 
-            // txtSearchClients
-            // 
-            this.txtSearchClients.Location = new System.Drawing.Point(6, 6);
-            this.txtSearchClients.Name = "txtSearchClients";
-            this.txtSearchClients.Size = new System.Drawing.Size(243, 27);
-            this.txtSearchClients.TabIndex = 0;
-            // 
-            // flbClients
-            // 
-            this.flbClients.Location = new System.Drawing.Point(8, 39);
-            this.flbClients.Name = "flbClients";
-            this.flbClients.Size = new System.Drawing.Size(241, 551);
-            this.flbClients.TabIndex = 1;
             // 
             // flbRequests
             // 

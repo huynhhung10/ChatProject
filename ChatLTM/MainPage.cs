@@ -15,10 +15,22 @@ namespace ChatLTM
 {
     public partial class MainPage : Form
     {
-        public MainPage()
+        TcpClient tcpClient;
+        List<ChatItem> ChatItems;
+        List<FriendItem> MyFriends;
+        List<ClientItem> Clients;
+        public MainPage(TcpClient tcpClient)
         {
             InitializeComponent();
+            this.tcpClient = tcpClient;
+            ChatItems = new List<ChatItem>();
+            MyFriends = new List<FriendItem>();
+            Clients = new List<ClientItem>();
+          /*  LoadProfile();
+            ReadNotifications();*/
+
         }
+
 
         private void MainPage_Load(object sender, EventArgs e)
         {
@@ -36,6 +48,11 @@ namespace ChatLTM
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flpChats_Paint(object sender, PaintEventArgs e)
         {
 
         }
