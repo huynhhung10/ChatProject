@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblGender = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSendMessage = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.textMessage = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -46,14 +46,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Username";
             // 
-            // label2
+            // lblUsername
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(161, 144);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Username";
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Location = new System.Drawing.Point(161, 144);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(75, 20);
+            this.lblUsername.TabIndex = 1;
+            this.lblUsername.Text = "Username";
             // 
             // label3
             // 
@@ -91,24 +91,24 @@
             this.btnSendMessage.Text = "Send";
             this.btnSendMessage.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
+            // textMessage
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(15, 526);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(357, 84);
-            this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "";
+            this.textMessage.Location = new System.Drawing.Point(15, 526);
+            this.textMessage.Name = "textMessage";
+            this.textMessage.Size = new System.Drawing.Size(357, 84);
+            this.textMessage.TabIndex = 6;
+            this.textMessage.Text = "";
             // 
             // FriendProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.textMessage);
             this.Controls.Add(this.btnSendMessage);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblGender);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.label1);
             this.Name = "FriendProfile";
             this.Size = new System.Drawing.Size(490, 629);
@@ -120,11 +120,11 @@
         #endregion
 
         private Label label1;
-        private Label label2;
+        private Label lblUsername;
         private Label label3;
         private Label lblGender;
         private Button btnClose;
         private Button btnSendMessage;
-        private RichTextBox richTextBox1;
+        private RichTextBox textMessage;
     }
 }
