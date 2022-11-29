@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChatLTM
+namespace ChatClient
 {
     static class Validation
     {
@@ -28,6 +28,9 @@ namespace ChatLTM
                 return true;
             return false;
         }
-        
+        public static bool Valid_Date(DateTime dt)
+        {
+            return (DateTime.Now.Subtract(dt).Days / 364 >= 14);
+        }
     }
 }

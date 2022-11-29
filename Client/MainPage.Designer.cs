@@ -1,4 +1,6 @@
-﻿namespace ChatLTM
+﻿using System.Windows.Forms;
+
+namespace Client
 {
     partial class MainPage
     {
@@ -89,6 +91,7 @@
             this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnMyProfile
             // 
@@ -98,6 +101,7 @@
             this.btnMyProfile.TabIndex = 3;
             this.btnMyProfile.Text = "Profile";
             this.btnMyProfile.UseVisualStyleBackColor = true;
+            this.btnMyProfile.Click += new System.EventHandler(this.btnMyProfile_Click);
             // 
             // tabControl1
             // 
@@ -134,6 +138,7 @@
             this.txtSearchChat.Name = "txtSearchChat";
             this.txtSearchChat.Size = new System.Drawing.Size(234, 27);
             this.txtSearchChat.TabIndex = 0;
+            this.txtSearchChat.TextChanged += new System.EventHandler(this.txtSearchChat_TextChanged);
             // 
             // NewChats
             // 
@@ -225,6 +230,7 @@
             this.txtSearchFriends.Name = "txtSearchFriends";
             this.txtSearchFriends.Size = new System.Drawing.Size(244, 27);
             this.txtSearchFriends.TabIndex = 0;
+            this.txtSearchFriends.TextChanged += new System.EventHandler(this.txtSearchFriends_TextChanged);
             // 
             // Others
             // 
@@ -251,6 +257,7 @@
             this.txtSearchClients.Name = "txtSearchClients";
             this.txtSearchClients.Size = new System.Drawing.Size(243, 27);
             this.txtSearchClients.TabIndex = 0;
+            this.txtSearchClients.TextChanged += new System.EventHandler(this.txtSearchClients_TextChanged);
             // 
             // FriendRequest
             // 
@@ -279,6 +286,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "MainPage";
             this.Text = "MainPage";
+
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);

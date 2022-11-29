@@ -31,6 +31,44 @@ namespace ChatLTM
 
         }
 
+        public void UpdateChats()
+        {
+            tabControl1.Controls.Find("flpChats", true)[0].Controls.Clear();
+            string SearchChat = tabControl1.Controls.Find("txtSearchChat", true)[0].Text;
+            foreach (ChatItem chatItem in ChatItems)
+            {
+                if (chatItem.ChatName.StartsWith(SearchChat))
+                {
+                    tabControl1.Controls.Find("flpChats", true)[0].Controls.Add(chatItem);
+                }
+            }
+        }
+        public void UpdateFriends()
+        {
+            tabFriends.Controls.Find("flbFriends", true)[0].Controls.Clear();
+            tabControl1.Controls.Find("flbAddChatMembers", true)[0].Controls.Clear();
+            string SearchFriends = tabFriends.Controls.Find("txtSearchFriends", true)[0].Text;
+            foreach (FriendItem friendItem in MyFriends)
+            {
+                tabControl1.Controls.Find("flbAddChatMembers", true)[0].Controls.Add(new AddChatMember(friendItem.FriendName));
+                if (friendItem.FriendName.StartsWith(SearchFriends))
+                {
+                    tabFriends.Controls.Find("flbFriends", true)[0].Controls.Add(friendItem);
+                }
+            }
+        }
+        public void UpdateClients()
+        {
+            tabFriends.Controls.Find("flbClients", true)[0].Controls.Clear();
+            string SearchClients = tabFriends.Controls.Find("txtSearchClients", true)[0].Text;
+            foreach (ClientItem clientItem in Clients)
+            {
+                if (clientItem.Username.StartsWith(SearchClients))
+                {
+                    tabFriends.Controls.Find("flbClients", true)[0].Controls.Add(clientItem);
+                }
+            }
+        }
 
         private async void GetChat(int chatId)
         {
@@ -59,9 +97,9 @@ namespace ChatLTM
                     break;
                 }
             }
-           /* UpdateClients();*/
+            UpdateClients();
             await streamWriter.WriteLineAsync("Request Accepted" + "&" + Username);
-           /* UpdateFriends();*/
+            UpdateFriends();
         }
         private async void FriendRequestReject(object sender, EventArgs e)
         {
@@ -100,7 +138,7 @@ namespace ChatLTM
                 ChatItems.Add(chatItem);
                 ChatID = int.Parse(Queries[ind++]);
             }
-            /*UpdateChats();*/
+            UpdateChats();
             MyFriends.Clear();
             string username = Queries[ind++];
             while (username != "-1")
@@ -111,7 +149,7 @@ namespace ChatLTM
                 MyFriends.Add(friendItem);
                 username = Queries[ind++];
             }
-           /* UpdateFriends();*/
+            UpdateFriends();
             Clients.Clear();
             username = Queries[ind++];
             while (username != "-1")
@@ -130,7 +168,7 @@ namespace ChatLTM
                 Clients.Add(clientItem);
                 username = Queries[ind++];
             }
-            /*UpdateClients();*/
+            UpdateClients();
             tabFriends.TabPages[2].Controls.Find("flbRequests", false)[0].Controls.Clear();
             username = Queries[ind++];
             while (username != "-1")
@@ -196,7 +234,7 @@ namespace ChatLTM
             {
                 await streamWriter.WriteLineAsync("Cancel Request" + "&" + clientItem.Username);
             }
-            /*UpdateClients();*/
+            UpdateClients();
         }
         private async void FriendClick(object sender, EventArgs e)
         {
@@ -346,22 +384,18 @@ namespace ChatLTM
                 {
                     if (Validation.Valid_password(myProfile.Password))
                     {
-                        if (Validation.Valid_Date(myProfile.Birthdate))
-                        {
+                       
                             NetworkStream networkStream = tcpClient.GetStream();
                             StreamWriter streamWriter = new StreamWriter(networkStream);
                             streamWriter.AutoFlush = true;
                             DialogResult dialogResult = MessageBox.Show("Are you sure you want to update your profile ?", "", MessageBoxButtons.YesNo);
                             if (dialogResult == DialogResult.Yes)
                             {
-                                await streamWriter.WriteLineAsync("UpdateMyInformation&" + myProfile.Username + "&" + myProfile.Password + "&" + myProfile.Birthdate.ToString("dd-MM-yyyy") + "&" + myProfile.Gender);
+                                await streamWriter.WriteLineAsync("UpdateMyInformation&" + myProfile.Username + "&" + myProfile.Password + "&" + "&" + myProfile.Gender);
                             }
                         }
-                        else
-                        {
-                            MessageBox.Show("You should be greater than 14 years old !!");
-                        }
-                    }
+                       
+                    
                     else
                     {
                         MessageBox.Show("Password should contains more than 8 characters consists of lower and upper case letters and digits !!");
