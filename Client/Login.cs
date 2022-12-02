@@ -23,8 +23,8 @@ namespace Client
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-           /* StartPage startPage = new StartPage();*/
-           /* startPage.Show();*/
+            StartPage startPage = new StartPage();
+            startPage.Show();
             this.Hide();
         }
 

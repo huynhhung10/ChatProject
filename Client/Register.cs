@@ -24,9 +24,9 @@ namespace Client
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            /*StartPage startPage = new StartPage();
-            startPage.Show();*/
-            /*this.Hide();*/
+            StartPage startPage = new StartPage();
+            startPage.Show();
+            this.Hide();
             MessageBox.Show("Please select your Gender!!");
 
         }
